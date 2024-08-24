@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" ref="myinput">
+        <button v-on:click="getData">Get Data</button>
+        <p>Text : {{ text }}</p>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const {createApp,ref} = Vue;
+
+    createApp({
+        data() {
+            return {
+                text:""
+            }
+        },
+        methods: {
+            getData() {
+                this.text=this.$refs.myinput.value;
+            }
+        },
+    }).mount('#app');
+
+</script>
+</html>

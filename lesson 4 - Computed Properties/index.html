@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 4</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>A : {{ a }} <button v-on:click="a++">Add A</button></p>
+      <p>B : {{ b }} <button v-on:click="b++">Add B</button></p>
+      <p>Age + A = {{ aAddAge }}</p>
+      <p>Age + B = {{ bAddAge }}</p>
+    </div>
+  </body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue;
+    createApp({
+      setup() {
+        const a = ref(0);
+        const b = ref(0);
+        const age = ref(20);
+        return {
+          a,
+          b,
+          age,
+        };
+      },
+      computed: {
+        aAddAge: function () {
+          return this.a + this.age;
+        },
+        bAddAge: function () {
+          return this.b + this.age;
+        },
+      },
+    }).mount("#app");
+  </script>
+</html>

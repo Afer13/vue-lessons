@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6</title>
+</head>
+<body>
+
+    <div id="app">
+        <button v-on:click="error=!error">Error</button>
+        <button v-on:click="success=!success">Success</button>
+
+        <p v-if="error">Error yarandi!</p>
+        <p v-if="success">Uğurlu əməliyyat!</p>
+        <hr>
+        <p v-if="error">Error yarandi! - 2</p>
+        <p v-else-if="success">Uğurlu əməliyyat! - 2</p>
+        <hr>
+        <p v-show="error">Error Show</p>
+        <p v-show="success">Success Show</p>
+
+    </div>
+    
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const {createApp,ref}=Vue;
+    createApp({
+        setup() {
+            const error=ref(false)
+            const success=ref(false)
+            return{
+                error,success
+            }
+        }
+    }).mount('#app');
+</script>
+</html>

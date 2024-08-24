@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 2</title>
+  </head>
+  <body>
+    <div id="app">
+      <label for="">Yaş: {{ age }}</label>
+      <button v-on:click="addName">Add</button>
+    </div>
+  </body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue;
+
+    createApp({
+      setup() {
+        const age = ref(11);
+        return {
+          age
+        };
+      },
+      methods: {
+        addName:function(){
+          this.age++;
+        }
+      },
+    }).mount("#app");
+  </script>
+</html>

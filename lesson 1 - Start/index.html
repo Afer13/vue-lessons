@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 1</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>Message : {{ message }}</p>
+      <p>Name : {{ name }}</p>
+      <p>Surname : {{ surname }}</p>
+      <p>Calc : {{ calc(1,2) }}</p>
+      <p>WebSite : <a v-bind:href="webSite" target="_blank">Link</a></p>
+      <p>Sual var? <input type="text" :value="sual"></p>
+    </div>
+  </body>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    const { createApp, ref } = Vue;
+
+    createApp({
+      setup() {
+        return {
+          message: "Hello Word",
+          name: "Afer",
+          surname: "Surname",
+          webSite: "https://aferrehimov.rf.gd",
+          sual: "Yox",
+        };
+      },
+      methods: {
+        calc: function (a1, a2) {
+          return a1 + a2;
+        },
+      },
+    }).mount("#app");
+  </script>
+</html>

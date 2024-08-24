@@ -1,0 +1,13 @@
+#app span{
+    background-color: red;
+    padding: 20px;
+    color: #fff;
+}
+
+#app span.active{
+    background-color: green;
+}
+#app span.extra::after{
+    content: "Extra data";
+    margin-left: 20px;
+}
